@@ -1,0 +1,217 @@
+:root {
+  font-family: Manrope, Arial, sans-serif;
+  color: #eeeeee;
+  background: #050505;
+  --ink: #f2f2f2;
+  --muted: #8a8a8a;
+  --paper: #0d0d0d;
+  --red: #ffffff;
+  --purple: #ffffff;
+  --line: #2b2b2b;
+}
+
+* { animation: none !important; }
+body { background: #050505; }
+button, input { border-radius: 0 !important; }
+button:focus-visible, input:focus-visible { outline: 1px solid #fff; outline-offset: 2px; }
+
+/* Entrada */
+.minimal-entry-shell { min-height: 100vh; display: grid; place-items: center; padding: 28px; color: #eee; background: #050505; }
+.minimal-entry { width: min(360px, 100%); }
+.entry-wordmark { display: block; margin-bottom: 48px; color: #fff; font-size: 42px; font-weight: 800; letter-spacing: -.045em; text-decoration: none; }
+.entry-form { display: grid; }
+.entry-form label { margin: 0 0 8px; color: #777; font-size: 9px; font-weight: 700; letter-spacing: .12em; }
+.entry-form label:not(:first-child) { margin-top: 22px; }
+.entry-form label small { margin-left: 6px; color: #4d4d4d; font-size: 8px; }
+.entry-input-wrap { position: relative; }
+.entry-input-wrap input, .entry-code { width: 100%; height: 48px; padding: 0 14px; color: #f5f5f5; background: #0c0c0c; border: 1px solid #292929; outline: none; }
+.entry-input-wrap input { padding-right: 58px; }
+.entry-input-wrap span { position: absolute; right: 14px; top: 17px; color: #515151; font: 9px 'DM Mono', monospace; }
+.entry-input-wrap input::placeholder, .entry-code::placeholder { color: #3f3f3f; }
+.entry-input-wrap input:focus, .entry-code:focus { border-color: #777; background: #0f0f0f; box-shadow: none; }
+.entry-code { font: 15px 'DM Mono', monospace; letter-spacing: .28em; text-transform: uppercase; }
+.entry-button { height: 48px; margin-top: 28px; padding: 0 15px; display: flex; align-items: center; justify-content: space-between; color: #050505; background: #eee; border: 1px solid #fff; font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+.entry-button:hover:not(:disabled) { background: #fff; }
+.entry-button:disabled { color: #666; background: #202020; border-color: #303030; }
+.entry-error { margin-top: 14px; color: #d8d8d8; font-size: 10px; line-height: 1.5; }
+
+/* Estrutura comum */
+.app-shell, .lobby-shell, .final-shell { min-height: 100vh; color: #e8e8e8; background: #070707; }
+.game-topbar { background: #090909; border-color: #242424; }
+.brand { color: #fff; font-size: 17px; letter-spacing: -.02em; text-shadow: none; }
+.brand-mark { width: 27px; height: 27px; padding: 7px; background: #fff; border: 0; box-shadow: none; transform: none; }
+.brand-mark span { width: 100%; height: 100%; background: #080808; }
+.header-room { color: #eee; background: transparent; border-color: #2e2e2e; }
+.header-room span, .leave-button { color: #777; }
+.header-room i { background: #fff; box-shadow: none; }
+.leave-button:hover { color: #fff; }
+.section-kicker { color: #999; }
+.section-kicker i { background: #fff; border-radius: 50%; box-shadow: none; }
+h1, .lobby-title-row h1, .final-content h1 { color: #f4f4f4; font-family: Manrope, Arial, sans-serif; font-weight: 800; letter-spacing: -.06em; text-shadow: none; }
+h1 em, .lobby-title-row h1 em, .final-content h1 em { color: #888; }
+h1 em::after { display: none; }
+
+/* Lobby */
+.lobby-shell { background: #070707; }
+.room-ticket { color: #eee; background: #0d0d0d; border: 1px solid #333; box-shadow: none; }
+.room-ticket::before, .room-ticket::after, .lobby-board::before { display: none; }
+.room-ticket > span, .room-ticket button { color: #8c8c8c; }
+.room-ticket > strong { color: #fff; font: 24px 'DM Mono', monospace; text-shadow: none; }
+.room-ticket button:hover { color: #fff; }
+.room-ticket .lan-address { grid-column: 1 / 3; margin-top: 9px; color: #555; font-size: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lobby-board { background: #0b0b0b; border: 1px solid #303030; box-shadow: none; }
+.roster-panel, .settings-panel { background: #0b0b0b; }
+.panel-heading { border-color: #282828; }
+.panel-heading svg, .panel-heading strong { color: #d8d8d8; }
+.panel-heading div > span { color: #aaa; background: #1b1b1b; }
+.panel-heading > small, .settings-panel > label, .leader-note, .waiting-copy { color: #6f6f6f; }
+.player-slot { color: #ddd; border-color: #282828; background: #101010; }
+.player-slot.ready { border-color: #777; background: #141414; box-shadow: inset 2px 0 0 #fff; }
+.avatar { color: #080808; background: #ddd; border: 0; box-shadow: none; }
+.player-info em, .racer-meta em, .final-player em { color: #050505; background: #ddd; }
+.player-info span { color: #707070; }
+.ready-state { color: #050505; background: #eee; }
+.player-slot:not(.ready) .ready-state { background: #222; }
+.ready-state i { background: #555; }
+.player-slot.empty { color: #505050; border-color: #272727; }
+.settings-panel { border-color: #303030; }
+.round-selector button { color: #888; border-color: #333; background: #101010; }
+.round-selector button.active { color: #050505; background: #eee; border: 1px solid #fff; box-shadow: none; }
+.setting-note { color: #777; background: #151515; border: 0; }
+.setting-note strong { color: #ccc; }
+.ready-button, .start-button { border: 1px solid #666; box-shadow: none; }
+.ready-button { color: #ddd; background: #111; }
+.ready-button.is-ready, .start-button { color: #050505; background: #eee; border-color: #fff; }
+.start-button:disabled { color: #555; background: #1a1a1a; border-color: #303030; box-shadow: none; }
+
+/* Corrida */
+.game-shell { color: #e8e8e8; background: #050505; }
+.race-header { background: #090909; border-color: #242424; }
+.round-progress > span, .race-clock span, .race-room { color: #6d6d6d; }
+.round-progress > strong, .race-clock strong { color: #f2f2f2; text-shadow: none; }
+.round-progress > strong small { color: #555; }
+.round-progress i { background: #282828; }
+.round-progress i.done { background: #ddd; box-shadow: none; }
+.race-clock { border-color: #292929; }
+.race-room i { background: #fff; box-shadow: none; }
+.course-caption { color: #ddd; }
+.course-caption span { color: #777; }
+.course-caption > small { color: #aaa; }
+.course-column { align-items: center; }
+.course-caption, .course-start { width: 100%; }
+.maze-frame { flex: 1; min-height: 0; aspect-ratio: 11 / 25; padding: 0; background: #080808; border: 0; outline: 1px solid #3a3a3a; box-shadow: none; }
+.maze-frame.spectator-view { outline-color: var(--focus-color); }
+.maze-board { width: 100%; height: 100%; aspect-ratio: 11 / 25; background: #111; }
+.maze-cell { aspect-ratio: 1 / 1; border: 0; }
+.maze-cell.path { background: #242424; box-shadow: inset 0 0 0 1px #292929; }
+.maze-cell.wall { background: #080808; box-shadow: inset 0 0 0 1px #101010; }
+.maze-cell.goal { background: repeating-conic-gradient(#eee 0 25%, #292929 0 50%) 0 / 8px 8px; }
+.maze-player { padding: 2px; transition: none !important; }
+.maze-player span { border: 1px solid #050505; box-shadow: none; }
+.goal-flag { color: #050505; }
+.course-start { color: #666; }
+.course-start i { background: #333; }
+.countdown-overlay { background: rgba(4,4,4,.82); backdrop-filter: none; }
+.countdown-overlay::before { display: none; }
+.countdown-overlay span { color: #fff; font-family: Manrope, Arial, sans-serif; font-size: 64px; font-weight: 800; text-shadow: none; }
+.countdown-overlay small { color: #777; }
+.finished-badge { color: #ddd; background: #0d0d0d; border: 1px solid #444; box-shadow: none; }
+.finished-badge > svg { color: #050505; background: #eee; }
+.finished-badge small { color: #777; }
+.rail-heading { border-color: #282828; }
+.rail-heading svg, .rail-heading strong { color: #ccc; }
+.rail-heading > span { color: #666; }
+.racer-card { color: #ddd; border-color: #292929; background: #0e0e0e; }
+.racer-card:hover { border-color: var(--player-color); }
+.racer-card.selected { border-color: var(--player-color); background: #141414; box-shadow: inset 2px 0 0 var(--player-color); }
+.racer-card.finished { opacity: .62; }
+.race-position { color: #777; }
+.mini-maze { width: auto; height: 66px; aspect-ratio: 11 / 25; background: #222; border: 0; outline: 1px solid #383838; }
+.racer-card:hover .mini-maze, .racer-card.selected .mini-maze { outline-color: var(--player-color); }
+.mini-maze > i { aspect-ratio: 1 / 1; }
+.mini-maze > i.wall { background: #080808; }
+.mini-maze > b { min-width: 0; min-height: 0; outline: 1px solid #050505; }
+.racer-meta { min-width: 0; overflow: hidden; }
+.racer-meta small { color: #666; }
+.finish-check { color: #ddd; filter: none; }
+.controls-card { border-color: #282828; }
+.controls-card small, .controls-card .or { color: #606060; }
+.key-cluster kbd { color: #aaa; background: #121212; border-color: #383838; box-shadow: none; }
+.touch-controls button { color: #ddd; background: #101010; border-color: #444; }
+
+/* Resultados */
+.modal-backdrop, .result-backdrop { background: rgba(0,0,0,.84); backdrop-filter: none; }
+.help-modal, .results-modal { color: #e8e8e8; background: #0b0b0b; border: 1px solid #3b3b3b; box-shadow: none; }
+.help-modal::before, .results-modal::before { display: none; }
+.modal-kicker { color: #888; }
+.help-modal h2, .results-modal h2 { color: #f2f2f2; font-family: Manrope, Arial, sans-serif; font-size: 29px; }
+.results-modal h2 em { color: #999; }
+.result-row { color: #ddd; background: #121212; border-color: #292929; }
+.result-row > span, .result-row > small { color: #777; }
+.result-row > b { color: #ddd; }
+.result-row > i { background: #888 !important; }
+.result-row.place-1 { color: #fff; border-color: #666; background: #181818; }
+.next-round > span { color: #777; }
+.next-round > strong { color: #eee; }
+.next-round > div { background: #252525; }
+.next-round i { background: #ddd; transition: none; }
+.trophy-box { color: #eee; background: #111; border: 1px solid #555; box-shadow: none; }
+.trophy-box i { display: none; }
+.final-content > p { color: #777; }
+.final-player { color: #ddd; background: #101010; border-color: #292929; }
+.final-player > i { color: #050505; background: #ddd; border: 0; }
+.final-player > span, .final-player > b small { color: #777; }
+.final-player > b { color: #eee; }
+.final-player.rank-1 { color: #fff; border: 1px solid #666; background: #171717; box-shadow: none; }
+.final-player.rank-1 > span { color: #ddd; }
+.primary-button { color: #050505; background: #eee; border-color: #fff; box-shadow: none; }
+.secondary-button { color: #aaa; background: #111; border-color: #333; }
+.form-error { color: #ddd; background: #151515; border-color: #777; }
+.final-actions .primary-button, .final-actions .secondary-button { width: 220px; min-width: 220px; height: 48px; min-height: 48px; margin: 0; display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
+
+/* Mantém arena e placar em colunas independentes em notebooks e janelas estreitas. */
+@media (min-width: 681px) and (max-width: 980px) {
+  .race-header { height: 58px; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; padding: 0 14px; }
+  .race-room { display: none; }
+  .race-clock { padding: 0 14px; }
+  .race-layout {
+    width: calc(100% - 24px);
+    height: calc(100vh - 58px);
+    grid-template-columns: minmax(0, 1fr) minmax(160px, 190px);
+    gap: 16px;
+  }
+  .course-column {
+    height: min(82vh, 660px);
+    max-height: calc(100vh - 76px);
+    margin: 0;
+    justify-self: end;
+    min-width: 0;
+  }
+  .racer-rail {
+    height: min(82vh, 660px);
+    max-height: calc(100vh - 76px);
+    min-width: 0;
+    overflow: hidden;
+  }
+  .rail-heading > span, .controls-card { display: none; }
+  .racer-card {
+    min-width: 0;
+    height: 78px;
+    min-height: 78px;
+    grid-template-columns: 23px 32px minmax(0, 1fr);
+    gap: 7px;
+    padding: 6px;
+  }
+  .mini-maze { height: 60px; }
+  .racer-meta strong { font-size: 8px; }
+  .racer-meta em { display: none; }
+  .finished-badge { width: calc(100% - 12px); max-width: 240px; bottom: 36px; }
+}
+
+@media (max-width: 680px) {
+  .minimal-entry-shell { align-items: start; padding-top: 18vh; }
+  .entry-wordmark { margin-bottom: 40px; font-size: 38px; }
+  .mini-maze { width: auto; height: 58px; }
+  .settings-panel { border-color: #303030; }
+  .final-actions .primary-button, .final-actions .secondary-button { width: 100%; min-width: 0; }
+}
