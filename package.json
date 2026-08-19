@@ -9,7 +9,7 @@
     "dev:server": "tsx watch server.ts",
     "build": "tsc -b && vite build",
     "test:smoke": "node scripts/smoke-test.mjs",
-    "tunnel": "tools\\cloudflared.exe tunnel --url http://127.0.0.1:3001 --protocol http2 --no-autoupdate",
+    "tunnel": "tools\\cloudflared.exe tunnel --url http://127.0.0.1:3001 --protocol http2",
     "start": "tsx server.ts"
   },
   "dependencies": {
